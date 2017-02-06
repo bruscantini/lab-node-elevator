@@ -41,7 +41,7 @@ class Elevator {
     }
 
     else {
-      this.destination = this.requests.pop();
+      this.destination = this.requests.shift();
       if (this.destination !== undefined){
         if (this.destination > this.floor) this.direction = 'up';
         else this.direction = 'down';

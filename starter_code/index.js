@@ -9,10 +9,17 @@ var persons = [
   new Person('bill', 2, 3),
   new Person('lucas', 10, 9),
   new Person('nancy', 2, 1),
-  new Person('alice', 8, 2)
+  new Person('alice', 8, 2),
+  new Person('howard', 4, 0)
 ];
 
-_.forEach(persons, (val) => {
-  elevator.call(val);
-});
+// will execute after 6 seconds.
+setTimeout(() => {
+  _.forEach(persons, (val) => {
+    elevator.call(val);
+  });
+}, 6000);
+
+// executes immediately. Christy should be first on the elevator.
+elevator.call(new Person('christy', 4, 0));
 elevator.start();
